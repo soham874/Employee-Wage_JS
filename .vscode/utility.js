@@ -1,13 +1,11 @@
 var IS_FULL_DAY = 8
 var IS_HALF_DAY = 4
 
-var DAILY_WAGE
-var MAX_WORK_DAYS
-var MAX_WORK_HOURS
-
 var totalWageStore = []
 
 class Utility {
+
+    //returns working hours for a day
     isPresentorAbsent() {
 
 
@@ -26,12 +24,14 @@ class Utility {
         return attendance
     }
 
+    //returns wage for a day
     calculateEmpWage() {
 
         let workwage = this.DAILY_WAGE * this.isPresentorAbsent()
         return workwage
     }
 
+    //returns daily, total wages and working hours for each company
     monthWageCalculate() {
 
         let workedHours = 0
@@ -53,22 +53,14 @@ class Utility {
 
     }
 
-    companyWageCalculate() {
-
-        var companyName = ["TCS", "Dell", "HP", "Lenovo", "Wipro"]
-        var dailyWage = [20, 50, 30, 45, 50]
-        var maxHours = [100, 150, 200, 175, 180]
-        var maxDays = [20, 15, 25, 18, 23]
-
-        for (var i = 0; i <= 4; i++) {
-            console.log("~~~~~~~~~~~~~~~~~~Calculating for company " + companyName[i] + " ~~~~~~~~~~~~~")
-            this.DAILY_WAGE = dailyWage[i]
-            this.MAX_WORK_DAYS = maxDays[i]
-            this.MAX_WORK_HOURS = maxHours[i]
-
-            this.monthWageCalculate()
-        }
-
+    //makes use of all above functions to store and evaluate wages for a company
+    companyWageCalculate(compName, dailWag, maximumHour, maximumDay) {
+        this.companyName = compName
+        this.DAILY_WAGE = dailWag
+        this.MAX_WORK_DAYS = maximumDay
+        this.MAX_WORK_HOURS = maximumHour
+        console.log("~~~~~~~~~~~~~~~~~~Calculating for company " + this.companyName + " ~~~~~~~~~~~~~")
+        this.monthWageCalculate() 
 
     }
 }

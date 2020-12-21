@@ -1,4 +1,4 @@
 
-let util=require('./utility.js')
+let util=require('./companyEmpWage.js')
 
-util.companyWageCalculate();
+util.empWageBuilder();
