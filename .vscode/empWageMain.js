@@ -1,4 +1,7 @@
 
-let util=require('./companyEmpWage.js')
+let wageBuilder=require('./companyEmpWage.js')
+let utility = require('./utility.js')
 
-util.empWageBuilder();
+wageBuilder.empWageBuilder();
+utility.searchName("HCL");
+

@@ -2,6 +2,7 @@ var IS_FULL_DAY = 8
 var IS_HALF_DAY = 4
 
 var totalWageStore = []
+var comNames = []
 
 class Utility {
 
@@ -49,7 +50,7 @@ class Utility {
             totalwage += wage
         }
 
-        totalWageStore.push(totalwage,dailyWageStore)
+        totalWageStore.push(totalwage, dailyWageStore)
         console.log("Total worked hours is " + workedHours)
         console.log("Total wage earned is Rs." + totalwage)
 
@@ -57,13 +58,31 @@ class Utility {
 
     //makes use of all above functions to store and evaluate wages for a company
     companyWageCalculate(compName, dailWag, maximumHour, maximumDay) {
-        this.companyName = compName
+        comNames.push(compName)
         this.DAILY_WAGE = dailWag
         this.MAX_WORK_DAYS = maximumDay
         this.MAX_WORK_HOURS = maximumHour
-        console.log("~~~~~~~~~~~~~~~~~~Calculating for company " + this.companyName + " ~~~~~~~~~~~~~")
+        console.log("~~~~~~~~~~~~~~~~~~Calculating for company " + compName + " ~~~~~~~~~~~~~")
         this.monthWageCalculate()
 
+    }
+
+    //searchs for records of a company
+    searchName(input) {
+
+        if (comNames.includes(input)) {
+
+            let i = 0
+            while (comNames[i].localeCompare(input) != 0 && i < comNames.length)
+                i++;
+            console.log(i)
+            console.log("Total wage earned by wage of this comapany is " + totalWageStore[2 * i])
+            console.log("Daily wages earned in this company are " + totalWageStore[2 * i + 1])
+
+            return true
+        }
+
+        console.log("Sorry this company record doesnot exist.")
     }
 }
 
