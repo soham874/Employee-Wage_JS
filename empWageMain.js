@@ -1,1 +1,1 @@
-console.log("Welcome to Employee Wage Calculations")
+console.log("Welcome to Employee Wage Calculations");
