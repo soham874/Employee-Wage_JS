@@ -5,6 +5,8 @@ var DAILY_WAGE
 var MAX_WORK_DAYS
 var MAX_WORK_HOURS
 
+var totalWageStore = []
+
 class Utility {
     isPresentorAbsent() {
 
@@ -45,6 +47,7 @@ class Utility {
             totalwage += wage
         }
 
+        totalWageStore.push(totalwage)
         console.log("Total worked hours is " + workedHours)
         console.log("Total wage earned is Rs." + totalwage)
 
