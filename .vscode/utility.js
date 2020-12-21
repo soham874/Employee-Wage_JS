@@ -5,7 +5,6 @@ var DAILY_WAGE = 20
 var MAX_WORK_DAYS = 20
 var MAX_WORK_HOURS = 100
 
-
 class Utility {
     isPresentorAbsent() {
 
