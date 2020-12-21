@@ -5,17 +5,16 @@ class Utility {
         let IS_HALF_DAY = 4
 
         let attendance = Math.floor(Math.random() * 10 % 3)
-        if (attendance === 0)
-            console.log("Employee is absent.")
-        else if (attendance === 1) {
-            attendance = IS_HALF_DAY
-            console.log("Employee is present half day.")
+        switch(attendance){
+            case 0:
+                attendance = 0
+                break
+            case 1:
+                attendance = IS_HALF_DAY
+                break
+            case 2:
+                attendance = IS_FULL_DAY
         }
-        else {
-            attendance = IS_FULL_DAY
-            console.log("Employee is present full day.")
-        }
-
 
         return attendance
     }
