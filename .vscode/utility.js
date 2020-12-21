@@ -1,14 +1,14 @@
 var IS_FULL_DAY = 8
 var IS_HALF_DAY = 4
-var DAILY_WAGE = 20
 
-var MAX_WORK_DAYS = 20
-var MAX_WORK_HOURS = 100
+var DAILY_WAGE
+var MAX_WORK_DAYS
+var MAX_WORK_HOURS
 
 class Utility {
     isPresentorAbsent() {
 
-        
+
         let attendance = Math.floor(Math.random() * 10 % 3)
         switch (attendance) {
             case 0:
@@ -25,8 +25,8 @@ class Utility {
     }
 
     calculateEmpWage() {
-        
-        let workwage = DAILY_WAGE * this.isPresentorAbsent()
+
+        let workwage = this.DAILY_WAGE * this.isPresentorAbsent()
         return workwage
     }
 
@@ -36,17 +36,36 @@ class Utility {
         let workedDays = 1
         let totalwage = 0
 
-        while(workedHours < MAX_WORK_HOURS && workedDays <= MAX_WORK_DAYS){
+        while (workedHours < this.MAX_WORK_HOURS && workedDays <= this.MAX_WORK_DAYS) {
             let s = `For day ${workedDays}, employee wage is `
             let wage = this.calculateEmpWage()
-            console.log(s+wage)
+            console.log(s + wage)
             workedDays++
-            workedHours+=wage/DAILY_WAGE
-            totalwage+=wage
+            workedHours += wage / this.DAILY_WAGE
+            totalwage += wage
         }
 
-        console.log("Total worked hours is "+workedHours)
-        console.log("Total wage earned is Rs."+totalwage)
+        console.log("Total worked hours is " + workedHours)
+        console.log("Total wage earned is Rs." + totalwage)
+
+    }
+
+    companyWageCalculate() {
+
+        var companyName = ["TCS", "Dell", "HP", "Lenovo", "Wipro"]
+        var dailyWage = [20, 50, 30, 45, 50]
+        var maxHours = [100, 150, 200, 175, 180]
+        var maxDays = [20, 15, 25, 18, 23]
+
+        for (var i = 0; i <= 4; i++) {
+            console.log("~~~~~~~~~~~~~~~~~~Calculating for company " + companyName[i] + " ~~~~~~~~~~~~~")
+            this.DAILY_WAGE = dailyWage[i]
+            this.MAX_WORK_DAYS = maxDays[i]
+            this.MAX_WORK_HOURS = maxHours[i]
+
+            this.monthWageCalculate()
+        }
+
 
     }
 }
