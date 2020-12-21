@@ -34,6 +34,7 @@ class Utility {
     //returns daily, total wages and working hours for each company
     monthWageCalculate() {
 
+        var dailyWageStore = []
         let workedHours = 0
         let workedDays = 1
         let totalwage = 0
@@ -41,13 +42,14 @@ class Utility {
         while (workedHours < this.MAX_WORK_HOURS && workedDays <= this.MAX_WORK_DAYS) {
             let s = `For day ${workedDays}, employee wage is `
             let wage = this.calculateEmpWage()
+            dailyWageStore.push(wage)
             console.log(s + wage)
             workedDays++
             workedHours += wage / this.DAILY_WAGE
             totalwage += wage
         }
 
-        totalWageStore.push(totalwage)
+        totalWageStore.push(totalwage,dailyWageStore)
         console.log("Total worked hours is " + workedHours)
         console.log("Total wage earned is Rs." + totalwage)
 
@@ -60,7 +62,7 @@ class Utility {
         this.MAX_WORK_DAYS = maximumDay
         this.MAX_WORK_HOURS = maximumHour
         console.log("~~~~~~~~~~~~~~~~~~Calculating for company " + this.companyName + " ~~~~~~~~~~~~~")
-        this.monthWageCalculate() 
+        this.monthWageCalculate()
 
     }
 }
