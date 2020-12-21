@@ -1,4 +1,4 @@
 
 let util=require('./utility.js')
 
-util.calculateEmpWage();
+util.monthWageCalculate();

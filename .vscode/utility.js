@@ -5,7 +5,7 @@ class Utility {
         let IS_HALF_DAY = 4
 
         let attendance = Math.floor(Math.random() * 10 % 3)
-        switch(attendance){
+        switch (attendance) {
             case 0:
                 attendance = 0
                 break
@@ -22,7 +22,17 @@ class Utility {
     calculateEmpWage() {
         let DAILY_WAGE = 20
         let workhours = DAILY_WAGE * this.isPresentorAbsent()
-        console.log("Employee wage is " + workhours)
+        return workhours
+    }
+
+    monthWageCalculate() {
+
+        for (let i = 1; i <= 20; i++) {
+            let s = `For day ${i}, employee wage is `
+            s += this.calculateEmpWage()
+            console.log(s)
+        }
+
     }
 }
 
