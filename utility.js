@@ -26,7 +26,7 @@ class Utility {
     }
 
     //returns wage for a day
-    calculateEmpWage() {
+    calculateEmpWage = () => {
 
         let workwage = this.DAILY_WAGE * this.isPresentorAbsent()
         return workwage
@@ -75,7 +75,7 @@ class Utility {
             let i = 0
             while (comNames[i].localeCompare(input) != 0 && i < comNames.length)
                 i++;
-            console.log(i)
+            
             console.log("Total wage earned by wage of this comapany is " + totalWageStore[2 * i])
             console.log("Daily wages earned in this company are " + totalWageStore[2 * i + 1])
 

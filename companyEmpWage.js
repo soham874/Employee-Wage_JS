@@ -9,8 +9,9 @@ class companyEmpWage{
         var maxHours = [100, 150, 200, 175, 180]
         var maxDays = [20, 15, 25, 18, 23]
 
-        for (var i = 0; i <= 4; i++) 
-            util.companyWageCalculate(companyName[i], dailyWage[i], maxHours[i], maxDays[i]);
+        for (var i = 0; i < companyName.length ; i++) 
+           util.companyWageCalculate(companyName[i], dailyWage[i], maxHours[i], maxDays[i]);
+
         
     }
         
