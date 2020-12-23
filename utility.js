@@ -7,7 +7,7 @@ var comNames = []
 class Utility {
 
     //returns working hours for a day
-    isPresentorAbsent() {
+    isPresentorAbsent = () => {
 
 
         let attendance = Math.floor(Math.random() * 10 % 3)
@@ -33,7 +33,7 @@ class Utility {
     }
 
     //returns daily, total wages and working hours for each company
-    monthWageCalculate() {
+    monthWageCalculate = () => {
 
         var dailyWageStore = []
         let workedHours = 0
@@ -57,7 +57,7 @@ class Utility {
     }
 
     //makes use of all above functions to store and evaluate wages for a company
-    companyWageCalculate(compName, dailWag, maximumHour, maximumDay) {
+    companyWageCalculate = (compName, dailWag, maximumHour, maximumDay) => {
         comNames.push(compName)
         this.DAILY_WAGE = dailWag
         this.MAX_WORK_DAYS = maximumDay
@@ -68,7 +68,7 @@ class Utility {
     }
 
     //searchs for records of a company
-    searchName(input) {
+    searchName = (input) => {
 
         if (comNames.includes(input)) {
 
